@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>HTML常用标签Blog</title><link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; padding-bottom: 70px; overflow-x: visible; }
+.first-line-indent #write div, .first-line-indent #write li, .first-line-indent #write p { text-indent: 2em; }
+.first-line-indent #write div :not(p):not(div), .first-line-indent #write div.md-htmlblock-container, .first-line-indent #write p *, .first-line-indent pre { text-indent: 0px; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write > blockquote:first-child, #write > div:first-child, #write > figure:first-child, #write > ol:first-child, #write > p:first-child, #write > pre:first-child, #write > ul:first-child { margin-top: 30px; }
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 4px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+
+
+
+
+
+ .typora-export p, .typora-export .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h3><a name='header-n0' class='md-header-anchor '></a>HTML常用标签介绍Blog</h3><p>​<span>	</span>HTML(HyperText Markup Language , HTML5标准)超文本标记语言!</p><pre lang=".txt" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=".txt"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;" class="CodeMirror-activeline"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计令人赏心悦目的网页、网页应用程序以及移动应用程序的用户界面。</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>---维基百科"HTML"</span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。它描述并定义了一个网页的内容和基本布局。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），或功能与行为（如 JavaScript）。</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span>---MDN web docs</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 230px;"></div><div class="CodeMirror-gutters" style="height: 230px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre><p>&nbsp;</p><p>​<span>	</span><strong>本文将主要介绍HTML中的一些常用标签,默认位阅读本文章的读者是具有一定基础的开发者或者是爱好者,下面我就简单讲讲HTML中的常常用到的标签元素!</strong></p><p>​<span>	</span>Tips:再看此文时,你可能会疑问,不是每一个标签都有对应的结尾的标签吗,对的HTML中的每一个标签都是有一个对应的反斜杠+对应单词结尾的标签(少数标签除外)!</p><p>​<span>	</span>因此我在介绍常用的HTML标签时,在表格中的元素没有对对应的元素标签进行补齐,大家不要觉得意外!</p><p>&nbsp;</p><h4><a name='header-n20' class='md-header-anchor '></a>01|根元素<span>	</span></h4><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><html></td><td>HTML<html>元素是一个HTML文档的根元素,<code>所有的元素必须是此元素的后代</code>!</td></tr></tbody></table></figure><h4><a name='header-n7' class='md-header-anchor '></a>02|文档元数据<span>	</span></h4><p><strong>元数据（Metadata）含有页面的相关信息，包括样式、脚本及数据，能帮助一些软件 (如<a href='https://developer.mozilla.org/en-US/docs/Glossary/search_engine'>搜索引擎</a>， <a href='https://developer.mozilla.org/en-US/docs/Glossary/Browser'>浏览器</a>等等）更好地运用和渲染页面。对于样式和脚本的元数据，可以直接在网页里定义，也可以链接到包含相关信息的外部文件。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><link></td><td><strong>HTML</strong> 中<strong><link></strong>元素规定了外部资源与当前文档的关系。 这个元素可用来为导航定义一个关系框架。这个元素最常于链接<a href='https://developer.mozilla.org/zh-CN/docs/Glossary/CSS'>样式表</a>。</td></tr><tr><td><meta></td><td><strong>HTML <meta> 元素</strong>表示那些不能由其它HTML元相关元素 (<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/base'><code>&lt;base&gt;</code></a>, <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link'><code>&lt;link&gt;</code></a>, <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script'><code>&lt;script&gt;</code></a>, <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/style'><code>&lt;style&gt;</code></a> 或 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/title'><code>&lt;title&gt;</code></a>) 之一表示的任何元数据信息.</td></tr><tr><td><style></td><td><strong>HTML的<style>元素</strong>包含文档的样式信息或者文档的部分内容。默认情况下，该标签的样式信息通常是<a href='https://developer.mozilla.org/en-US/docs/Web/CSS'>CSS</a>的格式。</td></tr><tr><td><title></td><td><strong>HTML <title> 元素</strong> 定义文档的标题，显示在浏览器的标题栏或标签页上。它只可以包含文本，若是包含有标签，则包含的任何标签都不会被解释。</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n66' class='md-header-anchor '></a>03|内容分区</h4><p><strong>内容分区元素允许你将文档内容从逻辑上进行组织划分。使用包括页眉(header)、页脚(footer)、导航(nav)和标题(h1~h6)等分区元素，来为页面内容创建明确的大纲，以便区分各个章节的内容。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><footer></td><td><strong>HTML <footer> 元素</strong>表示最近一个<a href='https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document#Defining_Sections_in_HTML5'>章节内容</a>或者<a href='https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document#Sectioning_root'>根节点</a>（sectioning root ）元素的页脚。一个页脚通常包含该章节作者、版权数据或者与文档相关的链接等信息。</td></tr><tr><td><header></td><td><code>&lt;header&gt;</code>元素表示一组引导性的帮助，可能包含标题元素，也可以包含其他元素，像logo、分节头部、搜索表单等。</td></tr><tr><td><h1>~<h6></td><td><strong>HTML <h1>–<h6> 标题(Heading)元素</strong>呈现了六个不同的级别的标题，<code>&lt;h1&gt;</code> 级别最高，而 <code>&lt;h6&gt;</code> 级别最低。一个标题元素能简要描述该节的主题。标题信息可以由用户代理可以使用，例如，自动构造某个文档中的内容表（就像本文档右边浮动栏一样）。</td></tr><tr><td><main></td><td>HTML <strong><main>元素</strong>呈现了文档<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body'>``</a>或应用的主体部分。主体部分由与文档直接相关，或者扩展于文档的中心主题、应用的主要功能部分的内容组成。这部分内容在文档中应当是独一无二的，不包含任何在一系列文档中重复的内容，比如侧边栏，导航栏链接，版权信息，网站logo，搜索框（除非搜索框作为文档的主要功能）。</td></tr><tr><td><nav></td><td><em>HTML导航栏</em> (<code>&lt;nav&gt;</code>) 描绘一个含有多个超链接的区域，这个区域包含转到其他页面，或者页面内部其他部分的链接列表.</td></tr><tr><td><section></td><td><em>HTML Section 元素</em> (<code>&lt;section&gt;</code>) 表示文档中的一个区域（或节），比如，内容中的一个专题组，一般来说会有包含一个标题（heading）。一般通过是否包含一个标题 (<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h1'>``</a>-<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h6'>``</a> element) 作为子节点 来 辨识每一个<section>。</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n103' class='md-header-anchor '></a>04|文本内容</h4><p><strong>使用 HTML 文本内容元素来组织在开标签 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body'>``</a> 和闭标签 <code>&lt;/body&gt; 里的</code>块或章节的内容。这些元素能标识内容的宗旨或结构，而这对于 <a href='https://developer.mozilla.org/en-US/docs/Glossary/accessibility'>accessibility</a> 和 <a href='https://developer.mozilla.org/en-US/docs/Glossary/SEO'>SEO</a> 很重要。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><dir></td><td><em>HTML 目录元素</em> (<code>&lt;dir&gt;</code>) 表示一个目录，也就是文件名称的集合。</td></tr><tr><td><div></td><td><strong>HTML <div> 元素</strong> (或 <em>HTML 文档分区元素</em>) 是一个通用型的流内容容器，它在语义上不代表任何特定类型的内容，它可以被用来对其它元素进行分组，一般用于样式化相关的需求（使用 <strong>class</strong> 或 <strong>id</strong> 特性) 或者对具有相同特性的一组元素进行分组 (比如 <strong>lang</strong>)，它应该在没有任何其它语义元素可用时才使用 (比如 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article'>``</a> 或 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav'>``</a>) 。</td></tr><tr><td><dl></td><td><strong>HTML <dl> 元素</strong> （或 <em>HTML</em> <em>描述列表元素</em>）是一个包含术语定义以及描述的列表，通常用于展示词汇表或者元数据 (键-值对列表)。</td></tr><tr><td><dt></td><td><strong>HTML <dt> 元素</strong> （或 <em>HTML 术语定义元素</em>）用于在一个定义列表中声明一个术语。该元素仅能作为 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dl'>``</a> 的子元素出现。通常在该元素后面会跟着 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dd'>``</a> 元素， 然而，多个连续出现的 <code>&lt;dt&gt;</code> 元素都将由出现在它们后面的第一个 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dd'>``</a> 元素定义。</td></tr><tr><td><hr></td><td><strong>HTML <hr> 元素</strong>表示段落级元素之间的主题转换（例如，一个故事中的场景的改变，或一个章节的主题的改变）。在HTML的早期版本中，它是一个水平线。现在它仍能在可视化浏览器中表现为水平线，但目前被定义为语义上的，而不是表现层面上。</td></tr><tr><td><li></td><td><strong>HTML <li> 元素</strong> (或者 <em>HTML 列表条目元素</em>) 用于表示列表里的条目。它必须被包含在一个父元素里：一个有顺序的列表(<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ol'>``</a>)，一个无顺序的列表(<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ul'>``</a>)，或者一个菜单 (<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/menu'>``</a>)。在菜单或者无顺序的列表里，列表条目通常用点排列显示。在有顺序的列表里，列表条目通常是在左边有按升序排列计数的显示，例如数字或者字母。</td></tr><tr><td><main></td><td>HTML <strong><main>元素</strong>呈现了文档<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body'>``</a>或应用的主体部分。主体部分由与文档直接相关，或者扩展于文档的中心主题、应用的主要功能部分的内容组成。这部分内容在文档中应当是独一无二的，不包含任何在一系列文档中重复的内容，比如侧边栏，导航栏链接，版权信息，网站logo，搜索框（除非搜索框作为文档的主要功能）。</td></tr><tr><td><ol></td><td><strong>HTML <ol> 元素</strong> 表示多个有序列表项，通常渲染为有带编号的列表。</td></tr><tr><td><p></td><td><strong>HTML <p></strong>元素（或者说 HTML 段落元素）表示文本的一个段落。该元素通常表现为一整块与相邻文本分离的文本，或以垂直的空白隔离或以首行缩进。另外，<p> 是<a href='https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements'>块级元素</a>。</td></tr><tr><td><pre></td><td><strong>HTML <pre></strong> 元素表示预定义格式文本。在该元素中的文本通常按照原文件中的编排，以等宽字体的形式展现出来，文本中的空白符（比如空格和换行符）都会显示出来。(紧跟在 <pre> 开始标签后的换行符也会被省略)</td></tr><tr><td><ul></td><td>The <strong>HTML <ul> 元素</strong> ( 或 <em>HTML 无序列表元素）</em> 代表多项的无序列表，即无数值排序项的集合，且它们在列表中的顺序是没有意义的。通常情况下，无序列表项的头部可以是几种形式，如一个点，一个圆形或方形。头部的风格并不是在页面的HTML描述定义, 但在其相关的CSS 可以用 <a href='https://developer.mozilla.org/zh-CN/docs/Web/CSS/list-style-type'><code>list-style-type</code></a> 属性。</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n162' class='md-header-anchor '></a>05|内联文本语义</h4><p><strong>使用 HTML 内联文本语义(Inline text semantics)定义语句，结构，可以是一个词，一段，或任意风格的文字。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><a></td><td><strong>HTML <a></strong> 元素  (或锚元素) 可以创建一个到其他网页、文件、同一页面内的位置、电子邮件地址或任何其他URL的超链接。</td></tr><tr><td><code>&lt;br&gt;</code></td><td><strong>HTML <br/> 元素</strong>在文本中生成一个换行（回车）符号。此元素在写诗和地址时很有用，这些地方的换行都非常重要。</td></tr><tr><td><em></td><td><em>HTML 着重元素</em> (<strong><em></strong>) 标记出需要用户着重阅读的内容， <code>&lt;em&gt;</code> 元素是可以嵌套的，嵌套层次越深，则其包含的内容被认定为越需要着重阅读。</td></tr><tr><td><kbd></td><td>HTML键盘输入元素(<strong><kbd></strong>) 用于表示用户输入，它将产生一个行内元素，以浏览器的默认monospace字体显示。</td></tr><tr><td><span></td><td><strong>HTML <span></strong> 元素是短语内容的通用行内容器，并没有任何特殊语义。可以使用它来编组元素以达到某种样式意图（通过使用类或者Id属性），或者这些元素有着共同的属性，比如<strong>lang</strong>。应该在没有其他合适的语义元素时才使用它。<code>&lt;span&gt;</code> 与 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div'>``</a> 元素很相似，但 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/div'>``</a> 是一个 <a href='https://developer.mozilla.org/en-US/docs/HTML/Block-level_elements'>块元素</a> 而 <code>&lt;span&gt;</code> 则是 <a href='https://developer.mozilla.org/en-US/docs/HTML/Inline_elements'>行内元素 </a>.</td></tr><tr><td><strong></td><td>Strong 元素 (<code>&lt;strong&gt;</code>)表示文本十分重要，一般用粗体显示。</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n198' class='md-header-anchor '></a>06|图片和多媒体</h4><p><strong>HTML 支持各种多媒体资源，例如图像，音频和视频。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><audio></td><td><strong>HTML <audio></strong> 元素用于在文档中表示音频内容。 <code>&lt;audio&gt;</code> 元素可以包含多个音频资源， 这些音频资源可以使用 <code>src</code> 属性或者<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source'>``</a> 元素来进行描述； 浏览器将会选择最合适的一个来使用。对于不支持<audio>元素的浏览器，<audio>元素也可以作为浏览器不识别的内容加入到文档中。</td></tr><tr><td><img></td><td><em>HTML Image 元素</em>（ <code>&lt;img&gt;</code> ）代表文档中的一个图像。</td></tr><tr><td><vedio></td><td><strong>HTML <video> 元素</strong> 用于在HTML或者XHTML文档中嵌入视频内容。</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n226' class='md-header-anchor '></a>07|脚本</h4><p><strong>为了创建动态内容和 Web 应用程序，HTML 支持使用脚本语言，最突出的就是 JavaScript。某些元素支持此功能。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><canvas></td><td><strong><canvas>元素</strong>可被用来通过脚本（通常是JavaScript）绘制图形。比如,它可以被用来绘制图形,制作图片集合,甚至用来实现动画效果。你可以(也应该)在元素标签内写入可提供替代的的代码内容，这些内容将会在在旧的、不支持<canvas>元素的浏览器或是禁用了JavaScript的浏览器内渲染并展现。</td></tr><tr><td><noscript></td><td>如果页面上的脚本类型不受支持或者当前在浏览器中关闭了脚本，则在HTML <noscript> 元素中定义脚本未被执行时的替代内容。</noscript></td></tr><tr><td><script></td><td><strong>HTML <script> 元素</strong>用于嵌入或引用可执行脚本。</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n251' class='md-header-anchor '></a>08|表格内容</h4><p><strong>这里的元素用于创建和处理表格数据。元素在一个 元素中可以出现一个或者更多。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><col></td><td><strong>HTML <col> 元素</strong> 定义表格中的列，并用于定义所有公共单元格上的公共语义。它通常位于元素内。</td></tr><tr><td><colgroup></td><td>HTML 中的 表格列组（<em>Column Group</em> <strong><colgroup></strong>） 标签用来定义表中的一组列表。</td></tr><tr><td><table></td><td><strong>HTML</strong>的 <strong>table</strong> 元素表示表格数据 — 即通过二维数据表表示的信息。</td></tr><tr><td><tbody></td><td>这个 HTML 标签</td></tr><tr><td><td></td><td>The <em>Table cell</em> <a href='https://developer.mozilla.org/en-US/docs/Web/HTML'>HTML</a> element (<strong><td></strong>) defines a cell of a table that contains data. It participates in the <em>table model</em>.</td></tr><tr><td><tfoot></td><td><strong>HTML 元素<tfoot></strong>  定义了一组计算表格中各列总和的行。</td></tr><tr><td><th></td><td><strong>HTML <th> 元素</strong> <code>scope</code> and <code>headers</code> 属性</td></tr><tr><td><thead></td><td><strong>HTML</strong>的<strong><thead></strong>元素定义了一组定义表格的列头的行。</td></tr><tr><td><tr></td><td><strong>HTML <tr> 元素</strong>定义表格中的行。 Those can be a mix of <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td'><td></a> and <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/th'><th></a>elements.</td></tr></tbody></table></figure><p>&nbsp;</p><h4><a name='header-n309' class='md-header-anchor '></a>09|表单</h4><p><strong>HTML 提供了许多可一起使用的元素，这些元素能用来创建一个用户可以填写并提交到网站或应用程序的表单。详情请参阅 <a href='https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Forms'>HTML forms guide</a>。</strong></p><figure><table><thead><tr><th>元素</th><th>描述</th></tr></thead><tbody><tr><td><button></td><td><strong>HTML <button> 元素</strong>表示一个可点击的按钮，可以用在<a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms'>表单</a>或文档其它需要使用简单标准按钮的地方。</td></tr><tr><td><form></td><td><strong>HTML <form></strong> <strong>元素</strong> 表示了文档中的一个区域，这个区域包含有交互控制元件，用来向web服务器提交信息。</td></tr><tr><td><input></td><td><strong>HTML <input> 元素</strong>用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。</td></tr><tr><td><label></td><td>HTML 元素表示用户界面中项目的标题。</td></tr><tr><td><option></td><td>在web表单中,  <strong>HTML元素 <option></strong>  用于定义在<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/select'><code>select</code></a>,  <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/optgroup'><code>optgroup</code></a> 或<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/datalist'><code>datalist</code></a> 元素中包含的项。<option> 可以在弹出窗口和 html 文档中的其他项目列表中表示菜单项。</td></tr><tr><td><select></td><td>HTML <em>select</em> (<code>&lt;select&gt;</code>) 元素是一种表单控件，可创建选项菜单。菜单内的选项为<code>&lt;option&gt;</code> , 可以由 <code>&lt;optgroup&gt;</code> 元素分组。选项可以被用户预先选择。</td></tr><tr><td><textarea></td><td><strong>HTML <textarea> 元素</strong>表示<code>一个</code>多行纯文本编辑控件。</td></tr></tbody></table></figure><pre lang=".txt" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=".txt"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>其中以上就是一些常用的标签,当然我自己也差不多用到了前面所介绍的标签,这些常用的标签在描述中都有简单介绍!</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span>其中的一些详细信息可以点击描述中的一些链接可以看到具体用法!</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="height: 69px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre><blockquote><ol><li>其中在前端领域比较好的教程网站比如:<a href='https://developer.mozilla.org/zh-CN/'>MDN</a> 其中不仅仅是HTML的一些标签之类的 当然还包括:<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Introduction'>HTML介绍</a>,<a href='https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML'>HTML教程</a>,<a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference'>HTML参考</a></li></ol></blockquote><blockquote><p>  2.因为本人的只是水品有限,其中的一些标签怕因为个人的不成熟的见解误导别人,因此其中读者所看到的标签描述以及元素介绍都是从MDN(Mozilla Developer Network ,<strong>Mozilla 开发者网络</strong>) 经过自己在开发中(主要是学习和实践中)主要用到的标签提炼出来,当然还有许多地方没有做到位! 如果您看到这篇Blog对你有帮助的话(当然我也很乐意这样做)或者是你觉得还有很多地方需要改进的地方的话还请联系我:<a href='Gump016@163.com'>ProbeDream</a></p></blockquote></div>
+</body>
+</html>
