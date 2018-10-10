@@ -5,7 +5,7 @@
 
 > * jirenguHTTP入门Blog [HTTP入门](https://charliesmith97.github.io/Blog/Work/%E9%A5%A5%E4%BA%BA%E8%B0%B7HTTP%E5%85%A5%E9%97%A8Blog.html) 
 
-> * jirengu[HTML常用标签Blog](https://github.com/CharlieSmith97/Blog/blob/master/Work/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BEBlog.html)
+> * jirengu[HTML常用标签Blog](https://charliesmith97.github.io/Blog/Work/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BEBlog.html)
 
 > * This link is [demo.sh](https://github.com/CharlieSmith97/Blog/blob/master/code%20source/demo.sh) 
 
