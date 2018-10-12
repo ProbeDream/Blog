@@ -13,4 +13,4 @@
 
 > * append node code [node code  source](https://github.com/CharlieSmith97/Blog/blob/master/code%20source/node-demo/server.js)
 
-> * TopNavBar PreView link:https://charliesmith97.github.io/Blog/code%20source/resume.html
+> * TopNavBar PreView link:[PreView TopNavBar URL](https://charliesmith97.github.io/Blog/code%20source/resume.html)
