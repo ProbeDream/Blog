@@ -12,3 +12,5 @@
 > * This link is [generate filie and generate folder](https://github.com/CharlieSmith97/Blog/tree/master/code%20source/123) 
 
 > * append node code [node code  source](https://github.com/CharlieSmith97/Blog/blob/master/code%20source/node-demo/server.js)
+
+> * TopNavBar PreView link:https://charliesmith97.github.io/Blog/code%20source/resume.html
