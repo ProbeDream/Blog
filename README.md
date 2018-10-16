@@ -14,3 +14,5 @@
 > * append node code [node code  source](https://github.com/CharlieSmith97/Blog/blob/master/code%20source/node-demo/server.js)
 
 > * TopNavBar PreView link:[PreView TopNavBar URL](https://charliesmith97.github.io/Blog/code%20source/resume.html)
+
+> * 太极效果演示[链接](https://charliesmith97.github.io/Blog/code%20source/taiji.html)
