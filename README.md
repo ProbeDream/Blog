@@ -18,3 +18,5 @@
 > * 太极效果演示[链接](https://charliesmith97.github.io/Blog/code%20source/taiji.html)
 
 > * 什么是[CSS](https://charliesmith97.github.io/Blog/Work/%E4%BB%80%E4%B9%88%E6%98%AFCSS.html)?
+
+> * CSS常用布局[Blog](https://charliesmith97.github.io/Blog/Work/CSS%E5%B8%83%E5%B1%80Blog.html)
