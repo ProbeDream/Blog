@@ -21,4 +21,4 @@
 
 > * CSS常用布局[Blog](https://charliesmith97.github.io/Blog/Work/CSS%E5%B8%83%E5%B1%80Blog.html)
 
-> * My simple [resume link:](https://charliesmith97.github.io/Blog/myCode%20source/resume.html) 
+> * My simple [resume link](https://charliesmith97.github.io/Blog/myCode%20source/resume.html) 
