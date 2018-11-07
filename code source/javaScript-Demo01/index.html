@@ -69,7 +69,7 @@
             }
         }
         function getFromLocalStorage(parameters) {
-            return JSON.parse(localStorage.getItem(parameters)) || 'null'
+            return JSON.parse(localStorage.getItem(parameters) || 'null')
         }
 
 
@@ -94,8 +94,8 @@
                 var key = button2['id']//拿到点击编辑按钮的标签的 id值
                 var url = prompt("请给我一个网址:")
                 hash[key] = url//将自己输入的值 对hash进行替换! 记住替换的值就是hash[key]对应的网址!
-                image.onerror = function (event) {
-                    img2.src = 'http://' + url + "/favicon.ico"//并且将当前网址获取的图片 对之前的图片进行替换操作!
+                img2.src = 'http://' + url + "/favicon.ico"//并且将当前网址获取的图片 对之前的图片进行替换操作!
+                img2.onerror = function (event) {
                     event.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
                 }
                 localStorage.setItem("saveState", JSON.stringify(hash))// setItem(String key,String value) 设置项 使用JSON.stringify()转成String! 
