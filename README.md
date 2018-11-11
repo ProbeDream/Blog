@@ -25,4 +25,4 @@
 
 > * this is beautiful about keyBoard [JavaScript-Demo](https://charliesmith97.github.io/Blog/code%20source/javaScript-Demo01/index.html)
 
-> * this is simple [canvas production paint](https://charliesmith97.github.io/Blog/code%20source/canvas-Demo/index.html)
+> * this is simple [javaScript production paintting canvas](https://charliesmith97.github.io/Blog/code%20source/canvas-Demo/index.html)
