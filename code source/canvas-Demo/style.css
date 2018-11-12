@@ -2,6 +2,7 @@ ul,ol{list-style:none;}
 *{margin: 0;padding: 0px;}
 #canvasDemo{
     display:block;
+    background: white;
   }
   
   body{
@@ -61,8 +62,34 @@ ul,ol{list-style:none;}
   background: blue; 
 }
 
+.colors > li.black{
+  background: black; 
+}
+ 
+
 .colors > li.active{
  box-shadow: 0 0 3px rgba(0,0,0,0.95); 
  transform: scale(1.2);
-
  }
+
+.sizes{
+   position: fixed;
+   right: 0px;
+   top: 18px;
+}
+
+.sizes > li{
+  margin: 20px 0;
+}
+
+.sizes > .thin{
+  width: 20px;
+  height: 0;
+  border-top:3px solid black;
+} 
+
+.sizes > .thick{
+  width: 20px;
+  height: ;
+  border-top:6px solid black;
+} 

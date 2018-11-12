@@ -1,5 +1,6 @@
 var canvasDemo = document.getElementById('canvasDemo');
 var context = canvasDemo.getContext('2d');
+var lineWidth = 5;
 autoCanvasSize(canvasDemo);
 listenToUser(canvasDemo);
 function listenToUser(canvas) {
@@ -105,7 +106,8 @@ function drwaCicle(x, y, radius) {
 //画线
 function drawLine(x1, y1, x2, y2) {
   context.beginPath();
-  context.lineWidth = 3;
+  context.lineWidth = lineWidth;
+  context.fillStyle = 'black';
   context.moveTo(x1, y1);
   context.lineTo(x2, y2);
   context.stroke();
@@ -130,6 +132,7 @@ red.onclick = function () {
   red.classList.add('active');
   green.classList.remove('active');
   blue.classList.remove('active');
+  black.classList.remove('active');
 }
 //设置 填充色和描边色 还有设置当前值的时候将其余的两种颜色的擦老实说List删除
 green.onclick = function () {
@@ -138,6 +141,7 @@ green.onclick = function () {
   green.classList.add('active');
   red.classList.remove('active');
   blue.classList.remove('active');
+  black.classList.remove('active');
 }
 //设置 填充色和描边色 还有设置当前值的时候将其余的两种颜色的擦老实说List删除
 blue.onclick = function () {
@@ -146,4 +150,49 @@ blue.onclick = function () {
   blue.classList.add('active');
   red.classList.remove('active');
   green.classList.remove('active');
+  black.classList.remove('active');
 }
+//设置 填充色和描边色 还有设置当前值的时候将其余的两种颜色的擦老实说List删除
+black.onclick = function () {
+  context.fillStyle = 'black';
+  context.strokeStyle = 'black';
+  black.classList.add('active');
+  red.classList.remove('active');
+  green.classList.remove('active');
+  blue.classList.remove('active');
+}
+
+
+//线条加粗
+thick.onclick = function () {
+  lineWidth = 10;
+}
+
+//线条变细
+thin.onclick = function () {
+  lineWidth = 3;
+}
+
+//清除画板内容!
+clear.onclick = function () {
+  context.clearRect(0, 0, canvasDemo.width, canvasDemo.height);
+}
+//给定当前滑画板的图片保存下载功能!
+download.onclick = function () {
+  //拿到当前canvasDemo的数据URL链接 并且是img/png格式的!
+  var url = canvasDemo.toDataURL('img/png');
+  //在文档里面创建一个a元素!
+  var downloadlink = document.createElement('a');
+  //设置锚点元素的href为当前canvasDemo的URL
+  downloadlink.href = url;
+  //记得给定当前图片的 可用时间戳或者是URL内容按照指定长度截取
+  downloadlink.download = 'xxxx.png';
+  //将A标签添加到document中!
+  document.body.appendChild(downloadlink);
+  //调用click方法下载完毕!
+  downloadlink.click();
+  //从document中删除!
+  document.body.removeChild(downloadlink);
+}
+
+

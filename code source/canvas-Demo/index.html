@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <title>My paint</title>
 
-    <script src="//at.alicdn.com/t/font_913491_8wmb7cz57i8.js"></script>
+    <script src="//at.alicdn.com/t/font_913491_w578eryzyh.js"></script>
 </head>
 
 <body>
@@ -23,12 +23,22 @@
         <svg id="eraser" class="icon">
             <use xlink:href="#icon-eraser"></use>
         </svg>
+        <svg id="clear" class="icon">
+            <use xlink:href="#icon-clearthecache"></use>
+        </svg>
+        <svg id="download" class="icon">
+            <use xlink:href="#icon-Save"></use>
+        </svg>
         <ol class="colors">
-            <li id="red" class="red active"></li>
+            <li id="black" class="black active"></li>
+            <li id="red" class="red"></li>
             <li id="green" class="green"></li>
             <li id="blue" class="blue"></li>
         </ol>
-
+        <ol class="sizes">
+            <li class="thin" id="thin"></li>
+            <li class="thick" id="thick"></li>
+        </ol>
     </div>
     <script src="./main.js"></script>
 </body>
