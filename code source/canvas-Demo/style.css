@@ -93,11 +93,11 @@ ul,ol{list-style:none;}
 
 .sizes > .thick{
   width: 20px;
-  height: ;
+  height:0;
   border-top:6px solid black;
 } 
 
-.sizes > li.active{
+.sizes > li{
   transform: scale(1.4);
   transition:all 0.3s;
 }
