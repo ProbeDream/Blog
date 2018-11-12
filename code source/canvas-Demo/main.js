@@ -166,11 +166,15 @@ black.onclick = function () {
 //线条加粗
 thick.onclick = function () {
   lineWidth = 10;
+  thick.classList.add('active');
+  thin.classList.remove('active');
 }
 
 //线条变细
 thin.onclick = function () {
   lineWidth = 3;
+  thin.classList.add('active');
+  thick.classList.remove('active');
 }
 
 //清除画板内容!

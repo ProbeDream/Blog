@@ -3,6 +3,9 @@ ul,ol{list-style:none;}
 #canvasDemo{
     display:block;
     background: white;
+    position:fixed;
+    top: 0;
+    left: 0;
   }
   
   body{
@@ -93,3 +96,8 @@ ul,ol{list-style:none;}
   height: ;
   border-top:6px solid black;
 } 
+
+.sizes > li.active{
+  transform: scale(1.4);
+  transition:all 0.3s;
+}
