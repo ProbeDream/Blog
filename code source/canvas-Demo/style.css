@@ -1,29 +1,68 @@
+ul,ol{list-style:none;}
+*{margin: 0;padding: 0px;}
 #canvasDemo{
-    background:green;
     display:block;
   }
   
   body{
-    margin: 0;
+    overflow: hidden;
   }
-  
-  html{
-    
-  }
+
   .actions{
     position:fixed;
-    bottom:0;
+    top:0;
     left:0;
+    padding: 20px;
   }
-  
-  .actions > #brush{
-    display: none;
+  .actions svg{
+    width: 1.5em;
+    height:1.5em;  
   }
-  
-  .actions.x > #brush{
-    display: block;
+
+ .icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    transition:all 0.3s;
+    padding:0 10px;
+ }
+
+ .actions svg.active{
+   fill:red;
+   transform: scale(1.2);
+   transition:all 0.3s;
+ }
+
+ .colors{
+   position:fixed;
+   top: 60px;
+   left: 16px; 
+ }
+
+ .colors > li{
+   margin: 20px;
+   padding: 20px;
+   margin: 10px 0px;
+   border-radius:50%;  
+   box-shadow:0 0 3px rgba(0,0,0,0.25); 
+   transition: all 0.3s; 
   }
-  
-  .actions.x > #eraser{
-    display: none;
-  }
+
+.colors > li.red{
+   background: red;  
+ }
+
+.colors > li.green{
+  background: green; 
+}
+
+.colors > li.blue{
+  background: blue; 
+}
+
+.colors > li.active{
+ box-shadow: 0 0 3px rgba(0,0,0,0.95); 
+ transform: scale(1.2);
+
+ }
