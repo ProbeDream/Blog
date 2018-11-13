@@ -26,3 +26,5 @@
 > * this is beautiful about keyBoard [JavaScript-Demo](https://charliesmith97.github.io/Blog/code%20source/javaScript-Demo01/index.html)
 
 > * this is simple [javaScript production paintting canvas](https://charliesmith97.github.io/Blog/code%20source/canvas-Demo/index.html)
+
+> * learn Base JavaScript link:[Getting started with simple JavaScript](https://charliesmith97.github.io/Blog/Work/JS里的数据类型.html)
