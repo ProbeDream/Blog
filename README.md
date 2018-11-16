@@ -29,4 +29,4 @@
 
 > * learn Base JavaScript link:[Getting started with simple JavaScript](https://charliesmith97.github.io/Blog/Work/JS里的数据类型.html)
 
-> * The difference between data type conversion and common type and object in javaScript [ink](https://charliesmith97.github.io/Blog/Work/JS里的数据类型转换和普通类型和对象的区别.html)
+> * [The difference between data type conversion and common type and object in javaScript link](https://charliesmith97.github.io/Blog/Work/JS里的数据类型转换和普通类型和对象的区别.html)
