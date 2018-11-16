@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>JS里的数据类型转换和普通类型和对象的区别</title><link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; padding-bottom: 70px; overflow-x: visible; }
+.first-line-indent #write div, .first-line-indent #write li, .first-line-indent #write p { text-indent: 2em; }
+.first-line-indent #write div :not(p):not(div), .first-line-indent #write div.md-htmlblock-container, .first-line-indent #write p *, .first-line-indent pre { text-indent: 0px; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write > blockquote:first-child, #write > div:first-child, #write > figure:first-child, #write > ol:first-child, #write > p:first-child, #write > pre:first-child, #write > ul:first-child { margin-top: 30px; }
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 4px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+
+
+
+
+
+ .typora-export p, .typora-export .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h2><a name='header-n788' class='md-header-anchor '></a>JS中的数据类型的转换和普通类型和对象的区别</h2><blockquote><p>这段时间在学JS中的类型一遍过程中的数据类型的转换,还有就是我们所说的基本类型(number,string,boolean)和复杂类型(Object:object,function,array)的区别!</p></blockquote><h3><a name='header-n954' class='md-header-anchor '></a>01|JS数据类型的转换</h3><blockquote><p><strong>下面的话我列举一下我们常常用到的基本类型吧:</strong></p></blockquote><figure><table><thead><tr><th>数据类型</th><th>介绍</th></tr></thead><tbody><tr><td>string</td><td>字符串类型</td></tr><tr><td>number</td><td>数字类型</td></tr><tr><td>boolean</td><td>布尔类型</td></tr><tr><td>null</td><td>空值</td></tr><tr><td>undefined</td><td>未定义</td></tr><tr><td>symbol</td><td><strong>暂不介绍</strong></td></tr><tr><td>object</td><td>object,function,Array</td></tr></tbody></table></figure><blockquote><p>因为之前在学习JavaScript中的类型的时候,Symbol没有做到太多的介绍和详细的说明,在这里也就不展开介绍了描述了,主要介绍其他几种:</p></blockquote><h4><a name='header-n678' class='md-header-anchor '></a>01|String</h4><blockquote><p><strong>String</strong>类型是我们在编程中使用到的最多的类型之一,那么在实际的开发过程中,应该如何讲别的类型转换成<strong>String</strong>类型呢?</p><p>下面针对开发过程中,给定了几种通过别的类型转换成String类型的方法:</p></blockquote><figure><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>1. String(x)</td><td>调用String()方法,传入需要转换的值</td></tr><tr><td>2. x.toString()</td><td>在需要转换的值后面调用toString()方法</td></tr><tr><td>3. x+&#39;&#39;</td><td>需要转换的值加上一对引号</td></tr></tbody></table></figure><p>Example:</p><blockquote><ol start='' ><li><p>先通过String()方法,对需要进行转换的值进行转换!</p></li><li><p>因为String本身的话就是字符串类型,就没有作举例说明!</p><ul><li>如果说这三种方法中,哪种方法的易用性更高,那就是第三种,第三种的话虽然说没有前面两种方法那么明确,但是却是更好用!</li><li>直接通过+&#39;&#39;将数值转换成了字符串!</li></ul></li></ol></blockquote><p>&nbsp;</p><h5><a name='header-n749' class='md-header-anchor '></a>01|Method:String(x)</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2String_01.jpg?raw=true' alt='任意类型转换String01' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h5><a name='header-n753' class='md-header-anchor '></a>02|Method:x.toString();</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2String_02.jpg?raw=true' alt='任意类型转换String02' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h5><a name='header-n756' class='md-header-anchor '></a>03|Method:x+&#39;&#39;</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2String_03.jpg?raw=true' alt='任意类型转换String03' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h4><a name='header-n762' class='md-header-anchor '></a>02|number</h4><blockquote><p>number数字类型也是常用的类型 之一,关于其他类型转换成别的类型的方法总共有5种,下面列表中举例说明:</p></blockquote><figure><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>1. Number(x)</td><td>调用该方法里面传入需要转换得值!</td></tr><tr><td>2. parseInt(x,10)</td><td>X:需要转换得值,后面的参数传入进制数:2 8 10 16</td></tr><tr><td>3. parseFloat(x)</td><td>方面将传入的值x转换成浮点数</td></tr><tr><td>4. x-0</td><td>传入的值x将转换成数值</td></tr><tr><td>5. +x</td><td>传入的值x将转换成数值</td></tr></tbody></table></figure><p>Example:</p><blockquote><p>其中这五种方法当中,最简单的就是最后两种了,第四种和第五种,这也是在大多数文档中没有提到过的方法!</p><p>其中的话,比如说parseInt和parseFloat都是通过解析的方法将其转成想要的数字,parseInt需要指定进制数(当然,默认可以不写 默认的话是转成<strong>10进制</strong>),而parseFloat是直接转成浮点数!</p></blockquote><p>&nbsp;</p><h5><a name='header-n758' class='md-header-anchor '></a>01|Method:Number(x)</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2number_01.jpg?raw=true' alt='任意类型转换number01' referrerPolicy='no-referrer' /></p><h5><a name='header-n718' class='md-header-anchor '></a>02|Method:parseInt(x,10)</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2number_02.jpg?raw=true' alt='任意类型转换number02' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h5><a name='header-n778' class='md-header-anchor '></a>03|Method:parseFloat(x)</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2number_03.jpg?raw=true' alt='任意类型转换number03' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h5><a name='header-n786' class='md-header-anchor '></a>04|Method:x-0</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2number_04.jpg?raw=true' alt='任意类型转换number04' referrerPolicy='no-referrer' /></p><h5><a name='header-n793' class='md-header-anchor '></a>05|Method:+x</h5><p>&nbsp;</p><p>​<span>							</span>    <img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2number_05.jpg?raw=true' alt='任意类型转换number05' referrerPolicy='no-referrer' /></p><p>​<span>							</span>     </p><h4><a name='header-n797' class='md-header-anchor '></a>03|Boolean</h4><blockquote><p>Boolean值的话,在我们开发中运用在条件判断语句中非常多,比如说if语句中,大多数是if中,当然有些运算符会返回布尔值:</p><ul><li>前置逻辑运算符:<strong>!(not)</strong></li><li>相等运算符:<strong>===,!==,==,!=</strong></li><li>比较运算符:<strong>&gt;,&gt;=,&lt;,&lt;=</strong></li></ul><p>下面有两种方法还有对应的集中falsy值介绍:</p></blockquote><figure><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>1. Boolean(X)</td><td>将X传入Boolean方法中会拿到转换后的Boolean(布尔)值!</td></tr><tr><td>2. !!X</td><td>通过!!感叹号得到对应的X的布尔值!</td></tr></tbody></table></figure><p>Example:</p><blockquote><p>这两种方法,都应该是比较好理解的,两种方法相比较来说,第一种更具有辨识性,第二种的话更具有易用性,当然需要理解这种方法的情况下才能够更好地使用!</p></blockquote><p>&nbsp;</p><h5><a name='header-n842' class='md-header-anchor '></a>01|Boolean</h5><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2Boolean_01.jpg?raw=true' alt='任意类型转换Boolean01' referrerPolicy='no-referrer' /><span>	</span></p><p>&nbsp;</p><h5><a name='header-n856' class='md-header-anchor '></a>02|!!x</h5><p>&nbsp;</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2Boolean_02.jpg?raw=true' alt='任意类型转换Boolean02' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h5><a name='header-n862' class='md-header-anchor '></a>03|falsy值 <span>	</span>该值会自动转换成Boolean值并且值为false </h5><figure><table><thead><tr><th>falsy值</th><th>介绍</th></tr></thead><tbody><tr><td>1. undefined</td><td>未定义的</td></tr><tr><td>2. null</td><td>空值</td></tr><tr><td>3. false</td><td>错误的</td></tr><tr><td>4. 0</td><td>数字0</td></tr><tr><td>5. NaN (Not a Number)</td><td>Nan表示不是数字 <a href='https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/NaN'>about NaN By MDN</a></td></tr><tr><td>6. &quot;&quot;或者是&#39;&#39;</td><td>空字符串</td></tr></tbody></table></figure><blockquote><p>以上的falsy值很好地说明了,哪些值为false,除此之外的值转换成Boolean值之后都为true!</p></blockquote><p>&nbsp;</p><h4><a name='header-n891' class='md-header-anchor '></a>04|Null and Undefined </h4><blockquote><p>这两种值都是在定义的时候表现出来的,其中的表现形式为:</p></blockquote><figure><table><thead><tr><th>操作</th><th>介绍</th></tr></thead><tbody><tr><td>var a;</td><td>a=undefined;(如果只是对一个变量进行声明的话没有赋值,默认为<strong>undefined</strong>)</td></tr><tr><td>var a=null;</td><td>a=null;对一个变量进行声明,但是如果不想赋值可以给定位<strong>null变量值为空!</strong></td></tr><tr><td>var a=3;a=null;</td><td>对一个变量赋值,然后又通过null对其进行覆盖,此时的变量就为null!</td></tr><tr><td>var a=c;a=undefined;</td><td>对一个变量赋值,然后又通过null对其进行覆盖,此时的变量就为undefined!</td></tr></tbody></table></figure><p>&nbsp;</p><h5><a name='header-n933' class='md-header-anchor '></a>05|Object include object,function,and Array</h5><blockquote><p>Object:对象,其实从字面意思上面来讲还是比较好理解的,就是对象的意思,但是在JavaScript中Object对象不仅仅包含,Object,还包括function(函数),Array(数组)</p></blockquote><p>其中关于数据类型的转换对对象来说就没有这个说法,此时你可能会问:为什么呢?</p><blockquote><p>因为对象称之为:<strong>复杂类型</strong>或者是<strong>合成类型</strong>,对于我们常常来说的对象就是封装了别的类型,就是常常说到的<strong>number类型,String类型或者是Boolean类型</strong>,还包括function,和Array也是对象!</p></blockquote><p>&nbsp;</p><h3><a name='header-n951' class='md-header-anchor '></a>02|类型和对象的区别</h3><blockquote><p> 其中类型我们刚刚在上面介绍的时候讲到了,包括了原始类型或者说是普通类型和合成类型或者说是复杂类型!</p><p>但是可以明白的是,对象是一种特殊的类型,区别于普通类型之外的但是又包含普通类型的类型!(包含了number,String,Boolean)</p><p>如果说要介绍它们的区别,可能要通过内存才能够很清楚很直观的体现出来!</p><ul><li>数据区分为 Stack（栈内存） 和 Heap（堆内存）</li><li>简单类型(<strong>类型</strong>)的数据直接存在 Stack 里</li><li>复杂类型(<strong>对象</strong>)的数据是把 Heap 地址存在 Stack 里</li></ul></blockquote><p>这里我通过画图简单介绍一下类型和对象:</p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/stack%20and%20heap_01.jpg?raw=true' alt='type and Object different_01' referrerPolicy='no-referrer' /></p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/stack%20and%20heap_02.jpg?raw=true' alt='type and Object different_02' referrerPolicy='no-referrer' /></p><p><img src='https://github.com/CharlieSmith97/PictureRepository/blob/master/jirengu/Blog%20picture/stack%20and%20heap_03.jpg?raw=true' alt='type and Object different_03' referrerPolicy='no-referrer' /></p><h4><a name='header-n982' class='md-header-anchor '></a>说在最后:</h4><blockquote><p>可能关于类型和对象的解释总结的不够到位,但是我会慢慢学习相关的一些知识,对原有的Blog进行补充说明,如有疑问还请联系我的Github:<a href='https://github.com/CharlieSmith97'>CharlieSmith97</a> !</p></blockquote><p>在javaScript中有关对象的概念还不清楚的朋友可以参考阮一峰老师的<a href='http://wangdoc.com/javascript/types/object.html'>javaScript教程:对象</a></p><p>&nbsp;</p></div>
+</body>
+</html>
