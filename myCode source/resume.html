@@ -4,6 +4,7 @@
 <head>
     <title>ProbeDream的个人简历</title>
     <link rel="stylesheet" href="./resume.css">
+    <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_876301_nd344v8xb6p.js"></script>
     <style type="text/css">
         .icon {
@@ -13,10 +14,31 @@
             fill: currentColor;
             overflow: hidden;
         }
+
+        .site-welcome {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #888;
+            display: none;
+            justify-content:center;
+            align-items:center;
+            z-index:1;
+        }
+
+        .site-welcome.active {
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
+    <div id="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
     <div class="topNavbar">
         <div class="topNavBar-inner clearFix">
             <a href="#" class="logo" alt="logo" style="float:left;text-decoration: none;">
@@ -186,7 +208,7 @@
             }
         </script>
 
-        <div class="works" style="height:597px;"> 
+        <div class="works" style="height:597px;">
             <div class="big" style="top:0;left:0;">
                 <img src="./image/1.jpg" alt="Desk">
             </div>
@@ -198,7 +220,9 @@
             </div>
         </div>
     </section>
-
+    <script>
+        siteWelcome.classList.remove('active'); 
+    </script>
 </body>
 
 </html>

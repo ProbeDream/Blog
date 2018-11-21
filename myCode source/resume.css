@@ -333,6 +333,5 @@ section.portfolio .works{
 /* 设置绝对定位 */
 section.portfolio .works > .big,
 section.portfolio .works > .small{
-    position: absolute;
-    
+    position: absolute;    
 }
