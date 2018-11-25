@@ -56,6 +56,7 @@
               关于 技能   经验  作品  博客  日历  联系方式   其他   所有项目
               about skills experience pricing  blog calendar contact other all demos
             -->
+            <li><a href="#siteAbout">关于</a></li>
             <li><a href="#siteSkills">技能</a></li>
             <li class="menuTigger">
               <a href="#sitePricing">作品</a>
@@ -73,7 +74,6 @@
                 <li>博客3</li>
               </ul>
             </li>
-            <li><a href="#siteAbout">关于</a></li>
             <li><a href="#siteCalendar ">日历</a></li>
             <li><a href="#siteContact">联系方式</a></li>
             <li><a href="#siteOther">其他</a></li>
@@ -84,7 +84,7 @@
     <div class="banner"><div class="mask"></div></div>
 
     <main>
-      <div id="siteAbout" class="userCard">
+      <div data-x id="siteAbout" class="userCard">
         <div class="textAndpicture clearFix">
           <div class="picture">
             <img
@@ -152,7 +152,7 @@
       </p>
     </main>
 
-    <section class="skills" id="siteSkills">
+    <section data-x class="skills" id="siteSkills">
       <h2>技能</h2>
       <ol class="clearFix">
         <li>
@@ -191,7 +191,7 @@
         </li>
       </ol>
     </section>
-    <section id="sitePricing" class="portfolio">
+    <section data-x id="sitePricing" class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearFix">
@@ -231,15 +231,60 @@
     <script>
       setTimeout(() => {
         siteWelcome.classList.remove("active");
-      }, 2000);
+      }, 100);
 
-      window.onscroll = function() {
+      //对一个特殊标签 添加一个offset(脱离)类
+      let specialTags = document.querySelectorAll("[data-x]"); //通过指定的条件查询对应的标签元素!
+      for (let index = 0; index < specialTags.length; index++) {
+        specialTags[index].classList.add("offset"); //对一个特殊标签缇娜加一个Class
+      }
+
+      //之前的关于主体的高亮设置 为用户默认设置滚动! 1S之后调用该方法!
+      setTimeout(() => {
+        pullDown();
+      }, 888);
+
+      //定义一个滚动的方法!
+      window.onscroll = function(x) {
         if (window.scrollY > 0) {
           topNavbar.classList.add("sticky");
         } else {
           topNavbar.classList.remove("sticky");
         }
+        pullDown();
       };
+
+      //下拉高亮函数!
+      function pullDown() {
+        //拿到指定的标签元素 进行遍历操作!
+        let specialTags = document.querySelectorAll("[data-x]"); //通过指定的条件查询对应的标签元素!
+        let minIndex = 0;
+        //通过表达式 拿到的一组标签元素进行遍历操作!
+        for (let index = 0; index < specialTags.length; index++) {
+          //通过比对
+          if (
+            Math.abs(specialTags[index].offsetTop - window.scrollY) <
+            Math.abs(specialTags[minIndex].offsetTop - window.scrollY)
+          ) {
+            minIndex = index;
+          }
+        }
+
+        //默认的话 是向上偏移的30px 然后当滑动到对应的内容区域的话 取出对应的动画效果!
+        specialTags[minIndex].classList.remove("offset");
+        //minIndex就是离窗口顶部最近的元素!
+        let id = specialTags[minIndex].id;
+        let a = document.querySelector('a[href="#' + id + '"]');
+        let li = a.parentNode;
+        let brothersAndMe = li.parentNode.children;
+        //先把li的兄弟样式去掉!
+        for (let index = 0; index < brothersAndMe.length; index++) {
+          brothersAndMe[index].classList.remove("highLight");
+        }
+        //对单前的li 进行样式的添加!
+        li.classList.add("highLight");
+      }
+
       //给定选择器 找到里面的所有的li
       let liTags = document.querySelectorAll("nav.menu > ul >li ");
       for (let i = 0; i < liTags.length; i++) {

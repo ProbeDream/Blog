@@ -38,6 +38,22 @@ h6 {
   display: block;
   clear: both;
 }
+[data-x].offset {
+  transform: translateY(-70px);
+}
+[data-x] {
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .topNavbar {
   /* 
     如果只是使用padding的话 name依照上右下左的设置方式设值!
@@ -46,7 +62,7 @@ h6 {
     padding-left: 16px;
     padding-right: 16px; 
     padding:20px 16px 20px 16px;
-     */
+  */
   padding: 20px 0 20px 0;
   position: fixed;
   top: 0;
@@ -92,7 +108,8 @@ h6 {
   color: inherit;
   position: relative;
 }
-.topNavbar nav > ul > li.active > a::after {
+.topNavbar nav > ul > li.active > a::after,
+.topNavbar nav > ul > li.highLight > a::after {
   content: "";
   display: block;
   position: absolute;
@@ -319,6 +336,7 @@ section.skills .progressBar {
   background: #fae1e1;
   border-radius: 2px;
   margin: 4px 0 40px;
+  overflow: hidden;
 }
 
 section.skills .progressBar > .progress {
@@ -326,6 +344,12 @@ section.skills .progressBar > .progress {
   background: #e6686a;
   width: 70%;
   border-radius: 2px;
+  transform:translateX(0);
+  transition:all 1s;
+}
+
+section.skills.offset .progress{
+  transform: translateX(-100%);
 }
 
 section.portfolio {
