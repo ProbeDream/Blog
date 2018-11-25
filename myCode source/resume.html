@@ -258,7 +258,24 @@
           let href = a.getAttribute("href"); //getAttribute 是带有Http协议的 获取到的值不做任何处理!
           let element = document.querySelector(href); //通过指定的href拿到对应的元素!
           let top = element.offsetTop; //拿到浏览器顶端到 当前元素的位置!
-          window.scroll(0, top - 80); //通过调节TOP距离 来调节锚点连接的位置!
+          let n = 25; //一共动25次!
+          let duration = 500 / n; //每次移动的时间 总共用了0.5s
+          let currentTop = window.scrollY;
+          let targetTop = top - 80;
+          let distance = (targetTop - currentTop) / n;//每次移动的距离
+          console.log("目标距离targetTop:" + targetTop);
+          console.log("当前距离currentTop:" + currentTop);
+          console.log("次数n:" + n);
+          console.log("每次移动的距离distance:" + distance);
+          let i = 0;
+          let id = setInterval(() => {
+            while (i === n) {
+              window.clearInterval(id);
+              return;
+            }
+            i += 1;
+            window.scrollTo(0, currentTop + distance + i);
+          }, duration);
         };
       }
     </script>
