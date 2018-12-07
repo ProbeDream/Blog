@@ -34,3 +34,5 @@
 > * [Prototype and prototype chain in JavaScript](https://charliesmith97.github.io/Blog/Work/JS中的原型与原型链.html)
 
 > * [This is Simple Slide-Demo!](https://charliesmith97.github.io/Blog/code%20source/Slide-Demo/index.html)
+
+> * [This is Midterm](https://charliesmith97.github.io/Blog/code%20source/middle%20example/第一题/index.html)
