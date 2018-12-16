@@ -12,8 +12,8 @@ window.$ = window.jQuery
 window.jQuery.ajax = function({url, method, body, success, fail}){
   //创建一个XMLHTTPRequest对象 赋值给一个声明好的变量!
   let request = new XMLHttpRequest()
-  request.open(method, url) // 配置request
-  let  headers: {
+  request.open(method, url); //配置request
+  let  headers={
       'content-type':'application/x-www-form-urlencoded',
       'ProbeDream': '18'
     }
@@ -39,18 +39,23 @@ window.jQuery.ajax = function({url, method, body, success, fail}){
   //最后调用send方法 发送body!
   request.send(body)
 }
-
+//声明函数f1
 function f1(responseText){}
+//声明函数f2
 function f2(responseText){}
 
+//myButton添加一个时间监听器  当点击事件触发后 就会进行异步请求!
 myButton.addEventListener('click', (e)=>{
   window.jQuery.ajax({
     url: '/frank',
     method: 'get',
+    //异步请求成功后调用
     success: (x)=>{
+      //请求成功后 就会调用f1,f2函数
       f1.call(undefined,x)
       f2.call(undefined,x)
     },
+    //异步请求失败后
     fail: (x)=>{
       console.log(x)
       console.log(x.status)

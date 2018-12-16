@@ -3,14 +3,12 @@
   <head>
     <title>ProbeDream的个人简历</title>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/css/swiper.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/css/swiper.min.css"
     />
     <link rel="stylesheet" href="./resume.css" />
     <link rel="stylesheet" href="./loading.css" />
     <script src="//at.alicdn.com/t/font_876301_nd344v8xb6p.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/js/swiper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
   </head>
 
   <body>
@@ -187,150 +185,24 @@
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
-
       </div>
-      
+
       <!-- If we need navigation buttons -->
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-      
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <!-- 模块化加载功能单一的JS文件! -->
+    <script src="./init-Swiper.js"></script>
+    <script src="./sticky-topBar.js"></script>
+    <script src="./autoSlideUp.js"></script>
+    <script src="./smoothly-navigation.js"></script>
     <script>
-      // 初始化Swiper!
-      var mySwiper = new Swiper(".swiper-container", {
-        // Optional parameters
-        direction: "horizontal",
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination"
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
-      });
-
+      // 100毫秒后会删除遮罩层的动画效果!
       setTimeout(() => {
         siteWelcome.classList.remove("active");
       }, 100);
-
-      //对一个特殊标签 添加一个offset(脱离)类
-      let specialTags = document.querySelectorAll("[data-x]"); //通过指定的条件查询对应的标签元素!
-      for (let index = 0; index < specialTags.length; index++) {
-        specialTags[index].classList.add("offset"); //对一个特殊标签缇娜加一个Class
-      }
-
-      //之前的关于主体的高亮设置 为用户默认设置滚动! 1S之后调用该方法!
-      setTimeout(() => {
-        pullDown();
-      }, 888);
-
-      //定义一个滚动的方法!
-      window.onscroll = function(x) {
-        if (window.scrollY > 0) {
-          topNavbar.classList.add("sticky");
-        } else {
-          topNavbar.classList.remove("sticky");
-        }
-        pullDown();
-      };
-
-      //下拉高亮函数!
-      function pullDown() {
-        //拿到指定的标签元素 进行遍历操作!
-        let specialTags = document.querySelectorAll("[data-x]"); //通过指定的条件查询对应的标签元素!
-        let minIndex = 0;
-        //通过表达式 拿到的一组标签元素进行遍历操作!
-        for (let index = 0; index < specialTags.length; index++) {
-          //通过比对
-          if (
-            Math.abs(specialTags[index].offsetTop - window.scrollY) <
-            Math.abs(specialTags[minIndex].offsetTop - window.scrollY)
-          ) {
-            minIndex = index;
-          }
-        }
-
-        //默认的话 是向上偏移的30px 然后当滑动到对应的内容区域的话 取出对应的动画效果!
-        specialTags[minIndex].classList.remove("offset");
-        //minIndex就是离窗口顶部最近的元素!
-        let id = specialTags[minIndex].id;
-        let a = document.querySelector('a[href="#' + id + '"]');
-        let li = a.parentNode;
-        let brothersAndMe = li.parentNode.children;
-        //先把li的兄弟样式去掉!
-        for (let index = 0; index < brothersAndMe.length; index++) {
-          brothersAndMe[index].classList.remove("highLight");
-        }
-        //对单前的li 进行样式的添加!
-        li.classList.add("highLight");
-      }
-
-      //给定选择器 找到里面的所有的li
-      let liTags = document.querySelectorAll("nav.menu > ul >li ");
-      for (let i = 0; i < liTags.length; i++) {
-        liTags[i].onmouseenter = function(details) {
-          details.currentTarget.classList.add("active");
-        };
-        liTags[i].onmouseleave = function(details) {
-          details.currentTarget.classList.remove("active");
-        };
-      }
-
-      //拿到nav.menu里面的ul>li>a的元素
-      let aTags = document.querySelectorAll("nav.menu > ul > li > a");
-
-      function animate(time) {
-        requestAnimationFrame(animate);
-        TWEEN.update(time);
-      }
-      requestAnimationFrame(animate);
-
-      for (let index = 0; index < aTags.length; index++) {
-        aTags[index].onclick = function(details) {
-          details.preventDefault(); //阻止默认动作!
-          let a = details.currentTarget;
-          let href = a.getAttribute("href"); //getAttribute 是带有Http协议的 获取到的值不做任何处理!
-          let element = document.querySelector(href); //通过指定的href拿到对应的元素!
-          let top = element.offsetTop; //拿到浏览器顶端到 当前元素的位置!
-          /*let n = 20; //一共动25次!
-          let duration = 500 / n; //每次移动的时间 总共用了0.5s
-          let currentTop = window.scrollY;
-          let targetTop = top - 80;
-          let distance = (targetTop - currentTop) / n; //每次移动的距离        
-          let i = 0;
-          let id = setInterval(() => {
-            if (i === n) {
-              window.clearInterval(id);
-              return;
-            }
-            i = i + 1;
-            window.scrollTo(0, currentTop + distance * i);
-            //位置移动 主要是当前的距离加上+每次移动的距离乘以次数!
-          }, duration);*/
-          //优化 通过使其有淡入淡出的效果 就是滚动条定位的时候!
-          let targetTop = top - 80;
-          let currentTop = window.scrollY;
-          let Distance = targetTop - currentTop;
-          var t = Math.abs((Distance / 100) * 300); //从下往上滑动的话 就代表距离为负数 但是对应的时间单位不能为负数!
-          //100px 像素就需要使用0.3s  如果说算出来的滑动时间如果说大于0.5S的话(就是大浮动滑动 就直接设置为0.5S 快速滑动!)
-          if (t > 500) {
-            t = 500;
-          }
-          var coords = { Y: currentTop }; //当前坐标
-          var tween = new TWEEN.Tween(coords)
-            .to({ Y: targetTop }, t) //结束位置 时间
-            .easing(TWEEN.Easing.Quadratic.InOut) //效果
-            .onUpdate(function() {
-              window.scrollTo(0, coords.Y);
-            })
-            .start();
-        };
-      }
     </script>
   </body>
 </html>
