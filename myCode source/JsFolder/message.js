@@ -8,7 +8,8 @@ AV.init({
 console.log("运行到这里是没有问题的!over!");
 
 //测试代码: 创建TestObject对象 并且在表中创建数据 如果说保存数据的话 成功的话 就会alert('helloWorld!')
-var TestObject = AV.Object.extend("TestObject");
+/**
+ * var TestObject = AV.Object.extend("TestObject");
 var testObject = new TestObject();
 testObject
   .save({
@@ -17,3 +18,17 @@ testObject
   .then(function(object) {
     alert("LeanCloud Rocks!");
   });
+ */
+
+let myForm = document.querySelector("#postMessageForm");
+myForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  let content = myForm.querySelector("input[name=content]").value;
+  var Message = AV.Object.extend("Message"); //创建表 Message
+  var message = new Message();
+  message.save({
+    'content': content
+  }).then(function(object){
+    console.log('存入成功!')
+  });
+});
