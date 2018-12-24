@@ -36,3 +36,5 @@
 > * [This is Simple Slide-Demo!](https://charliesmith97.github.io/Blog/code%20source/Slide-Demo/index.html)
 
 > * [This is Midterm](https://charliesmith97.github.io/Blog/code%20source/middle%20example/第一题/index.html)
+
+> * [Simple Animation-Resume ](https://charliesmith97.github.io/Blog/Animation-Resume/index.html)
