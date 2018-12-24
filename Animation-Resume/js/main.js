@@ -17,7 +17,7 @@ function writeCode(prefix, code, fn) {
       window.clearInterval(id);
       fn.call(); //当代码完成之后就会Call!
     }
-  }, 10);
+  }, 50);
 }
 
 function writeMarkDown(MarkDown, fn) {
@@ -88,7 +88,10 @@ var result2 = `
 
   `;
 
-var markDown = `#标题一`;
+var markDown = `
+内容待补充!
+
+`;
 
 writeCode("", result, () => {
   createPaper(() => {
