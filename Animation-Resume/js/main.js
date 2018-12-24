@@ -93,7 +93,7 @@ var markDown = `
 writeCode("", result, () => {
   createPaper(() => {
     writeCode(result, result2, () => {
-      writeMarkDown(markDown);
+      writeMarkDown(markDown, () => {});
     });
   });
 });
