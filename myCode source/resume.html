@@ -198,24 +198,24 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
-    <section class="message"> 
-        <h2>留言</h2>  
-        <ol id="messageList">!
-          <li></li>
-        </ol>
+    <section class="message">
+      <h2>留言</h2>
+      <ol id="messageList"></ol>
 
       <form id="postMessageForm" style="width: 700px;margin: 50px auto;">
-        <label for="">姓名</label> 
-        <input type="text" name="name">
-        <label for="">内容</label>
-        <input type="text" name="content">
-        <input type="submit" value="提交">
+        <label for="">姓名</label> <input type="text" name="name" />
+        <label for="">内容</label> <input type="text" name="content" />
+        <input type="submit" value="提交" />
       </form>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.5/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <!-- 存储服务 -->
     <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+    <!-- 引入View和Model模板! -->
+    <script src="base/View.js"></script>
+    <script src="base/Model.js"></script>
+    <script src="base/Controller.js"></script>
     <!-- 模块化加载功能单一的JS文件! -->
     <script src="JsFolder/autoSlideUp.js"></script>
     <script src="JsFolder/init-Swiper.js"></script>

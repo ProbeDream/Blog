@@ -1,47 +1,17 @@
 !function() {
-  //视图View
-  var view = document.querySelector("section.message");
-  
-  //数据模型 model
-  var model={
-    /**
-     * fetch:获取数据
-     * save:保存数据!
-     */
-    init: function() {
-      var APP_ID = "D30iDj3vhwJ1FyNftNNhNESs-gzGzoHsz";
-      var APP_KEY = "DOscwT1elqm8H2krUb9F1RcJ";
-      //AV对象初始化
-      AV.init({ appId: APP_ID, appKey: APP_KEY });
-    },
-    fetch:function(){
-      var query=new AV.Query('Message');
-      return query.find();//Promise对象
-    },save:function(name,content){
-      var Message=AV.Object.extend('Message');
-      var message=new Message();
-      //返回一个Promise对象!
-      return message.save({
-        'name':name,
-        'content':content
-      })
-    }
-  }
+  //数据模型 model  通过操作Message表的Model对象!
+  var model = Model({ resourceName: "Message" });
 
-  //控制器 Controller
-  var controller = {
-    view: null,
+  //视图View
+  var view = View("section.message");
+
+  var controller = Controller({
     messageList: null,
     myForm: null,
-    model:null,
-    init: function(view,model) {
-      this.view = view;
-      this.model=model;
+    init: function(view, model) {
       this.messageList = view.querySelector("#messageList");
       this.myForm = view.querySelector("#postMessageForm");
-      this.model.init();
       this.loadMessages();
-      this.bindEvents();
     },
     loadMessages: function() {
       //获取对象 根据对应的对象ID进行获取操作!
@@ -68,7 +38,8 @@
       );
     },
     bindEvents: function() {
-      this.myForm.addEventListener("submit", function(e) {
+      console.log(this.myForm);
+      this.myForm.addEventListener("submit", e => {
         e.preventDefault();
         this.saveMessage();
       });
@@ -77,18 +48,18 @@
       let myForm = this.myForm;
       let name = myForm.querySelector("input[name=name]").value;
       let content = myForm.querySelector("input[name=content]").value;
-      this.model.save(name,content)
-        .then((object)=> {
-          //如果说用户在Input输入框中存入成功了的话 就对其进行局部刷新
-          //window.location.reload(); 对当前窗口进行重新载入!
-          //如果需要做到无刷新添加的话 就需要用到动态内容插入 直接将标签插入到页面当中!
-          let li = document.createElement("li");
-          li.innerText = `${object.attributes.name}:${object.attributes.content}`;
-          this.appendChild(li);
-          //内容清空 也就是表单内容为空字符串!
-          myForm.querySelector("input[name=content]").value = "";
-        });
+      this.model.save({ name: name, content: content }).then(object => {
+        //如果说用户在Input输入框中存入成功了的话 就对其进行局部刷新
+        //window.location.reload(); 对当前窗口进行重新载入!
+        //如果需要做到无刷新添加的话 就需要用到动态内容插入 直接将标签插入到页面当中!
+        let li = document.createElement("li");
+        li.innerText = `${object.attributes.name}:${object.attributes.content}`;
+        let messageList = document.querySelector("#messageList");
+        messageList.appendChild(li);
+        //内容清空 也就是表单内容为空字符串!
+        myForm.querySelector("input[name=content]").value = "";
+      });
     }
-  };
-  controller.init(view,model);
+  });
+  controller.init(view, model);
 }.call();
