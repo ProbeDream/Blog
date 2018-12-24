@@ -8,11 +8,10 @@ function writeCode(prefix, code, fn) {
     //每次加一个字符! 当然也可以加上 result[n-1] 因为n是在不断变化的!
     domCode.innerHTML = Prism.highlight(
       prefix + code.substring(0, n),
-      Prism.languages.css,
-      "css"
+      Prism.languages.css
     );
     styleTag.innerHTML = prefix + code.substring(0, n);
-    domCode.scrollTop = scroll.scrollHeight;
+    domCode.scrollTop = domCode.scrollHeight;
     if (n >= code.length) {
       window.clearInterval(id);
       fn.call(); //当代码完成之后就会Call!
@@ -27,11 +26,11 @@ function writeMarkDown(MarkDown, fn) {
     n += 1;
     (domPaper.innerHTML = MarkDown.substring(0, n)),
       (domPaper.scrollTop = domPaper.scrollHeight);
-  });
-  if (n >= MarkDown.length) {
-    window.clearInterval(id);
-    fn.call();
-  }
+    if (n >= MarkDown.length) {
+      window.clearInterval(id);
+      fn.call();
+    }
+  }, 35);
 }
 
 var result = `/*
@@ -56,11 +55,9 @@ html{
 }
 
 /*我需要一点代码高亮!*/
-.token.selector {color: pink;}
-.token.property {color: pink;}
-.token.punctuation{color:pink;}
-.token.function{color:pink;}
 
+.token.selector{ color: #690; }
+.token.property{ color: #905; }
 
 /*加点3D效果!*/
 #code{transform:rotate(360deg);}
@@ -105,7 +102,7 @@ writeCode("", result, () => {
 function createPaper(fn) {
   var paper = document.createElement("div");
   paper.id = "paper";
-  var content = document.createElement("div");
+  var content = document.createElement("pre");
   content.className = "content";
   paper.appendChild(content);
   document.body.appendChild(paper);
