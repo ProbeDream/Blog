@@ -17,4 +17,6 @@
 
 > * [JS中的原型与原型链](https://charliesmith97.github.io/Blog/Blog-Folder/JS中的原型与原型链.html)
 
+> *  [Web性能优化](https://charliesmith97.github.io/Blog/Blog-Folder/Web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B8%B8%E7%94%A8%E6%89%8B%E6%AE%B5.html)
 
+> * [JavaScript中的继承](https://charliesmith97.github.io/Blog/Blog-Folder/JS%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF.html)
