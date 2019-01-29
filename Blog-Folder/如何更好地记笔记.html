@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>如何更好地记笔记</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h3><a name='header-n1482' class='md-header-anchor '></a>01|知识整理背后的思维逻辑</h3><h4><a name='header-n1484' class='md-header-anchor '></a>​01|如何建立自己的知识体系?</h4><blockquote><p>如果能够根据这个体系,在事物与事物之间的联系中熟练的使用黄金法则,进行客观分析!</p></blockquote><ul><li><p>&quot;刻意练习&quot;的过程</p><ol start='' ><li>建立知识与知识之间的联系</li><li>建立知识与现实的联系</li><li>回到现实,学会寻找事物背后的本质</li></ol></li><li><p>一个闭环的学习过程是什么样子？</p></li></ul><blockquote><p>学习理论,想办法用多种现象去解释它,然后在行为中应用改变,遇到现象,多思考背后的本质,以及可能解释现象的理论,反复建立连接,反复练习,慢慢的建立自己的知识网络!</p></blockquote><ul><li>信息过滤是什么?</li></ul><blockquote><p>将符合你的信息保留.不符合的信息将予以剔除/过滤掉</p></blockquote><ul><li>如何拥有自己对于信息和知识的&quot;过滤器&quot;?</li></ul><blockquote><p>当你有了一个方向和目标去学习和行动的时候,你就会发现你没有时间去为知识焦虑!</p></blockquote><p>&nbsp;</p><h4><a name='header-n1512' class='md-header-anchor '></a>02|知行合一才是真知</h4><ul><li><p>知道做不到,等于不知道</p></li><li><p>两种误区</p><ol start='' ><li>&quot;知而不行&quot;</li></ol></li></ul><blockquote><p>类似于:</p><ol start='' ><li>知道读书对我好,就是挤不出时间</li><li>知道应该努力,但是总给自己找托词</li></ol></blockquote><p><span>	</span>   2. &quot;行而不知&quot;</p><blockquote><p>每天过得浑浑噩噩,懵懵懂懂,任意而为
+完全不知道思考,工作和生活得过且过!</p></blockquote><p>&nbsp;</p><p>知道和行动应该是一回事</p><ul><li>一个人在说知道的时候,就应该就把行动包含在里面</li><li>一个人在行动的时候,就应该要把知道包含在里面</li><li>真正的知和行是同步的,只有知行合一才是真知</li></ul><p>&nbsp;</p><h4><a name='header-n1541' class='md-header-anchor '></a>03|&quot;道法术&quot;金三角理论</h4><blockquote><p>道:一个道理
+法:一个方法论
+术:具体案例</p></blockquote><p><strong>笔记侠的知识整理黄金法则</strong></p><p>&nbsp;</p><h3><a name='header-n1546' class='md-header-anchor '></a>02|知识达人的学习利器:读书笔记</h3><h4><a name='header-n1547' class='md-header-anchor '></a>01|三种高效阅读的方法</h4><ul><li>同一个大主题下的多种子主题阅读</li><li>同一个主题下的多视角学习</li><li>对于自己关注的领域,在有了一定的了解之后,尝试你一个大纲,来查看自己已经掌握了什么,哪里需要补充或深入
+<span>	</span></li></ul><h4><a name='header-n1555' class='md-header-anchor '></a>02|五点建议</h4><ul><li>要有追问意识,要用自己的思考拷问反思自己</li><li>要学会提问,问出好的问题,好于得到最好的答案</li><li>要建立一套完善的训练体系来强化书中的知识和自己的经验,要学会反复,反复再反复,同时平衡学习速度</li><li>知识体系的本源就是你想要成为什么样的人</li><li>读书和学习的方法中重要的经验是&quot;以输出带动输入&quot;</li></ul><p>&nbsp;</p><h4><a name='header-n1568' class='md-header-anchor '></a>03|做读书笔记的三种方法</h4><h5><a name='header-n1569' class='md-header-anchor '></a>01|摘录笔记,通过记录帮助记忆</h5><ul><li><p>可以先把书里面的核心观点,方法论和案例摘录出来,哪些句子很重要,你可以标红或者加粗</p></li><li><p>拆书是什么?
+​    ​所谓的拆书,就是拆借一本非常复杂的书籍,把其中的骨架和知识点找出来,用笔记的方式将它表达出来!
+​    </p></li><li><p>拆书的价值在哪里?</p><ol start='' ><li>拆书的过程是一次快速,又全面通读的过程 ,不会因为跳读而漏掉核心信息</li><li>拆书要求形成书的要点笔记,让人对书的整体在知识体系有全面的认识!</li><li>学习水平,某种程度上就是拥有正确的底层关键知识的数量及调动这些关键解决问题的能力的综合体现!</li><li>做好摘录笔记,是初级的读书学习者必须掌握的技能,把数量和记忆当做检验标准!</li></ol></li></ul><p>&nbsp;</p><h5><a name='header-n1587' class='md-header-anchor '></a>02|转述笔记,通过整理帮助思考</h5><ol start='' ><li><p>转述,使用自己的语言把这些我们想要掌握的链条转述出来!</p><p> </p></li></ol><h5><a name='header-n1592' class='md-header-anchor '></a>03|感想笔记,通过行动帮助传达</h5><ul><li><p>感想笔记是什么?</p><ol start='' ><li>以自我为中心的学习(读后感)</li></ol></li><li><p>感想笔记强调什么?</p><ol start='' ><li>强调读者在学习的过程中关联自己的经验,强调应用于实践,聚焦于解决实际问题</li></ol></li><li><p>通过不断的感想训练,可以帮助我们获得好的创意和结构,都不是突然冒出来的,一定是刻苦的努力,长期经常的思考带来的!</p></li></ul><p>&nbsp;</p><h5><a name='header-n1607' class='md-header-anchor '></a>04|一个人如果掌握这三种读书笔记的能力,就能够有清晰的框架和成长性思维</h5><p>    ​<span>	</span></p><h4><a name='header-n1609' class='md-header-anchor '></a>04|做读书笔记之后还可以做什么?</h4><blockquote><ol start='' ><li>加入或者自己建立读书社群</li><li>通过相互促进和相互交流的作用</li><li>​ 加快让自己摆脱只是活着智慧的贫穷感</li></ol></blockquote><p>&nbsp;</p><h3><a name='header-n1619' class='md-header-anchor '></a>03|&quot;过耳不忘&quot;的核心武器:课程笔记</h3><h4><a name='header-n1620' class='md-header-anchor '></a>01|为什么要做课程笔记?</h4><h5><a name='header-n1621' class='md-header-anchor '></a>01|提醒:做课程笔记≠做速记</h5><ol start='' ><li>做笔记是有逻辑,有重点的记录内容,体现的是一个人的立即抓取能力,做到边听边梳理逻辑,一定要对讲者讲的东西要理解!</li></ol><h5><a name='header-n1626' class='md-header-anchor '></a>02|做课程笔记的四个理由</h5><p>   ​1. 课程是由严格的逻辑结构在里面的,人的脑容量是有限的,&quot;笔记是人的第二大脑&quot;</p><ol start='2' ><li>有助于更好的向自己所要想面的人传播知识</li><li>有助于职业社交</li><li>有助于岗位技能</li></ol><p>&nbsp;</p><h5><a name='header-n1636' class='md-header-anchor '></a>03|要以理解代替记忆,就是说理解可以帮助我们记住知识,理解,这才是上课和做课程笔记的精髓所在!<span>											</span>     <span>			</span>--经济学家张五常</h5><p>&nbsp;</p><h4><a name='header-n1638' class='md-header-anchor '></a>02|做课程笔记还有哪些用途?</h4><p>课程笔记可以分成两类:</p><ol start='' ><li>给自己看:有些时候为了方便快速记录,甚至自创快捷短语,特殊符号,来提高笔记的完整性!</li><li>给别人看:文字,搭配图片,关系清晰,结构性强!</li></ol><p>&nbsp;</p><h4><a name='header-n1646' class='md-header-anchor '></a>03|如何完成一份合格的课程笔记?</h4><h5><a name='header-n1647' class='md-header-anchor '></a>01|误区</h5><ol start='' ><li>将分享者的内容大纲整理出来!</li><li>将分享的内容是露出来即可</li></ol><p>&nbsp;</p><h5><a name='header-n1654' class='md-header-anchor '></a>02|&quot;笔记三部曲RTG法&quot;</h5><ol start='' ><li><p>R:Record,记录</p><blockquote><p>课前预习
+听课时全神贯注
+现场记录或者课后用技术将语音转为文字实录</p></blockquote></li><li><p>T:Tidy,整理</p><blockquote><p>删减语气词,重复意义的词句
+梳理逻辑,重新搭建文章结构
+替换文章生僻词
+增加批注
+取好小标题</p></blockquote></li><li><p>G:Go share,分享</p><blockquote><p>最后的板式,配图等方式也非常重要
+可以提高用户阅读速度,喜悦用户阅读心情
+版式:为了统一
+配图:为了可视化与缓解文字压力   ​<span>	</span></p></blockquote></li></ol><p>&nbsp;</p><h4><a name='header-n1669' class='md-header-anchor '></a>04|优秀课程笔记的标准</h4><ol start='' ><li><p>逻辑性</p></li><li><p>结构化</p></li><li><p>信息量</p></li><li><p>价值观</p></li><li><p>符合&quot;道法术&quot;</p><blockquote><p>道:道理
+法:方法论
+术:具体实践</p></blockquote></li></ol><p>&nbsp;</p><h3><a name='header-n1684' class='md-header-anchor '></a>04|老板眼中的&quot;高效员工&quot;:计划笔记</h3><h4><a name='header-n1685' class='md-header-anchor '></a>01|在工作中可以准备的3个笔记本</h4><h5><a name='header-n1686' class='md-header-anchor '></a>01|管理日程安排的日程笔记本</h5><ol start='' ><li>方便做计划笔记,笔记本可以选择中等尺寸的</li><li>方便画横轴的日期和纵轴的具体时间安排</li></ol><h5><a name='header-n1692' class='md-header-anchor '></a>02|用来集合信息的航母笔记本</h5><ol start='' ><li>方便做会议笔记,尺寸可以越大越好,方便记录大量信息</li></ol><h5><a name='header-n1697' class='md-header-anchor '></a>03|用来存储灵感</h5><ol start='' ><li>方便做灵感笔记,笔记本可以选小一点尺寸的!</li><li>让工作顺利进行的关键在于工作的记录方法,也就是笔记本的使用方法
+​<span>	</span></li></ol><h4><a name='header-n1703' class='md-header-anchor '></a>02|如何做计划笔记?</h4><h5><a name='header-n1704' class='md-header-anchor '></a>01|制定年度/季度/阅读/周计划</h5><h5><a name='header-n1711' class='md-header-anchor '></a>02|掌握&quot;清单式思维&quot;</h5><ol><li>横轴是日期,纵轴是完成事项的具体时间</li><li>采用清单的方式是将任务条理化,当每一条都完成时,这件事情就会完成的特别标准化</li><li>适用于:做团队管理和项目管理</li><li>作用:做筛选和检查的,可以避免出错</li></ol><p>​<span>		</span></p><h5><a name='header-n1743' class='md-header-anchor '></a>03|如何将事件分类打标签</h5><p><strong>1. 学会将事件收集归类</strong></p><ul><li>第一步:罗列一下你每周,每天要做的事情</li><li>第二步:按四大类分别标签</li><li>所有的事情可以分为重要,不重要,紧急,不紧急,用矩阵的方式,划到四个小格子里去</li></ul><p>然后以此处理:</p><ol><li>马上处理最重要最紧急的</li></ol><ol start='2' ><li>处理大部分紧急单不重要的事情</li><li>把大部分时间花在重要但不紧急的事情上</li><li>有多余的时间就出来不重要也不紧急的事情上面</li></ol><p>&nbsp;</p><p><strong>2.用六个步骤来完成事件的处理</strong></p><ul><li>​第一:删除-立刻删除毫无价值的事情,不投入时间</li><li>第二:归档-将有价值的事情放入归档,首要处理</li><li>第三:将来-可以未来实现的放入将来,等待提取</li><li>第四:等待-分派其他人去完成的任务,分配时间</li><li>第五:下一步-可以第二完成的时间,排序完成</li><li>第六:项目-需要长时间完成的事项放下专项目录里</li></ul><p>&nbsp;</p><p>文档归类式的整理:<span>		</span></p><ul><li>发现事情更清晰了,你可以很快找到自己要做的,未来要做的事情,和正在进行中做的事情</li></ul><p>提醒:</p><ul><li>整理需要时间,但是整理好了后是为你节省更多的时间,高效管理事情和计划</li></ul><p>&nbsp;</p><p><strong>3.学会用工具管理计划</strong></p><ul><li>第一阶段:便签纸即时贴</li><li>第二阶段:手写日清单&amp;周清单&amp;月历</li><li>第三阶段:电子版记录清单</li></ul><p>&nbsp;</p><p><strong>4.几款计划管理的APP推荐</strong></p><ol><li>苹果自带的&quot;注意事项&quot;</li></ol><ol start='2' ><li>365日历</li><li>滴答清单</li></ol><p>&nbsp;</p><p><strong>5.计划管理上最难做到的是什么事?</strong></p><ol><li>习惯的养成</li><li>需要持久的,有毅力,刻意的去做</li><li>冲突发生时如何抉择</li><li>最常用的方法:&quot;那个需要先完成&quot;,然后把另一个扔掉</li><li>以为自己做不了</li><li>&quot;知行合一&quot;是万事之源</li><li>你想到了,然后去做,这样时间才会越来越高效!</li></ol><p>&nbsp;</p><h3><a name='header-n1908' class='md-header-anchor '></a>05|职场达人的&quot;超级保险箱&quot;-会议笔记</h3><h4><a name='header-n1911' class='md-header-anchor '></a>01|如何让开会更有效率?</h4><h5><a name='header-n1912' class='md-header-anchor '></a>01|开会前</h5><ol><li>在笔记本上写好今天的日期,具体的时间,参会人名,会议主题</li></ol><ol start='2' ><li>以后日后检索翻阅,查看上一次的会议时间和落实进度</li></ol><h5><a name='header-n1917' class='md-header-anchor '></a>02|在开会中</h5><ol><li><p>可以记录,把你想到的点子写出来</p></li><li><p>千万要记得别人讲的时候不要打断</p></li><li><p>建议:</p><ul><li>下你把你的点子记在本子上,等别人讲完之后,轮到你发言你再把你的想法说出来</li></ul></li></ol><h5><a name='header-n1919' class='md-header-anchor '></a>03|开会结束之前</h5><ol><li>把结论梳理好并再三确认,变成待办事项</li></ol><h5><a name='header-n1921' class='md-header-anchor '></a>04|会后</h5><ol start='2' ><li>照着待办事项去逐已完成
+<span>	</span></li></ol><h4><a name='header-n1913' class='md-header-anchor '></a>02|如何避免像搬运工一样什么都记?</h4><h5><a name='header-n1916' class='md-header-anchor '></a>01|开会前,想清楚会议的目的</h5><ul><li>要清晰地知道什么信息是与你解决问题相关的</li><li>千万别让战术上的勤奋掩盖战略上的懒惰</li><li>会议前的2~5分钟:是&quot;战略部署&quot;和理清思路的过程</li></ul><p>&nbsp;</p><h5><a name='header-n2003' class='md-header-anchor '></a>02|区分&quot;事实&quot;和&quot;意见&quot;</h5><ol><li>会议:用来陈述&quot;基于事实总结得出的想法&quot;的场所</li><li>首先,在每个人发言的时候,用两种不同颜色的笔区分&quot;事实&quot;和&quot;意见&quot;像后台数据,你所亲眼见到的东西基本归为事实,但是例如:&quot;我建议&quot;&quot;我觉得可以这样做&quot;基本归为意见</li><li>其次,如果只是单纯的提出意见的话,可以在后面补充问一句:&quot;方便说一下为什么这么做的理由吗?&quot;或者是&quot;请问你是基于什么事实依据提出来的?&quot;</li><li>努力将很虚的&quot;方向性&quot;意见拆分为可执行的&quot;落地性&quot;意见</li></ol><p>&nbsp;</p><h5><a name='header-n2002' class='md-header-anchor '></a>03|笔记框架&quot;康奈尔笔记法&quot;</h5><ol><li><p>记笔记绝对不是一种机械的,盲目的重复劳动,而是一个思考的过程,不是为了记笔记而记笔记,特别是在会议和工作中,记笔记的目的是帮助判断,最后得出结论----麦肯锡</p></li><li><p>康奈尔笔记的三个部分
+<strong>1.笔记部分</strong>
+ 何时填写:听课时
+ 将会议讨论或消化资料过程中,尽可能的记录有意义的事实,数据,各方的观点
+<strong>2.开篇部分</strong>
+何时填写:听课后复习时
+将笔记栏的信息进行简化,概括,记下自己的疑点或注意要点
+<strong>3.总结部分</strong>
+何时填写:听课后复习时</p><p>通过对信息的整理,导出明确的结论或者行动方案</p></li></ol><p>&nbsp;</p><h5><a name='header-n1982' class='md-header-anchor '></a>04|会议结束前,再一次确认结论</h5><ol><li><p>会议结束前要习惯快速回顾本次会议笔记</p><ul><li>查看需要确认的事项是否都有了明确的答案</li><li>主义是明确的可执行的答案</li></ul></li><li><p>作用</p><ul><li>帮助大家再次理清思路</li><li>向大家再次强调以确认的事项,以及将如何执行</li></ul></li></ol><p>&nbsp;</p><p>&nbsp;</p><h3><a name='header-n2017' class='md-header-anchor '></a>06|瑞士军刀式的思维工具-思维导图</h3><h4><a name='header-n2019' class='md-header-anchor '></a>01|什么是思维导图?</h4><ul><li>发散性思维应用的最佳工具</li><li>从一个中心点开始,每个单词或者图像自身都可以成为一个子中心或者联想</li><li>可以有效地断粮我们的可视化思维
+<span>	</span></li></ul><h4><a name='header-n2021' class='md-header-anchor '></a>02|思维导图的分类</h4><ol><li><p>用途上</p><ul><li>输入:起着记录的作用,发挥整合信息的功能</li><li>例:通过输入一本书的精华,或者一堂课的重点,最终整理出一份读书笔记或者课程笔记等!</li><li>例:做策划方案时,与公司同事,团队成员一起做头脑风暴,可以在白板上记录一个主题,发挥人的创造力和发散性思维,利用好思维到这个工具能够整合每个人的想法</li></ul></li><li><p>表现形式上</p><ul><li><p>手绘思维导图</p><ol><li>带动五感,加深印象</li></ol></li><li><p>软件制图</p><ol><li>软件制图对整体结构没有要求</li><li>对字迹没有要求</li><li>对画图时需要占用的空间没有要求</li><li>减少不必要的担心,姜经理专注在内容和思考上</li></ol></li></ul></li></ol><p>&nbsp;</p><h4><a name='header-n2132' class='md-header-anchor '></a>03|为什么要做思维导图?</h4><ol><li>是关键概念之间的联系一目了然,把脑海中的发散性思维的脉络具象化</li></ol><ol start='2' ><li>更好的建立知识与知识之间的联系.建立好知识体系,更容易加强记忆</li><li>一句事物的关联性连接在一起,能够更加快速的回顾并有效的记忆信息</li></ol><p>&nbsp;</p><h4><a name='header-n2133' class='md-header-anchor '></a>04|制作思维导图前的准备</h4><ul><li><p>把大脑进行一次&quot;断舍离&quot;</p></li><li><p>推荐软件</p><ol><li>Xmind</li><li>幕布</li><li>百度脑图</li><li>Process on</li><li>Mindnode(仅苹果)</li><li>IThought(仅苹果)</li><li>MindManager<span>			</span></li><li>付费</li><li>PC/Mobile</li><li>Win/apple</li><li>在线制图</li></ol></li></ul><p>&nbsp;</p></div>
+</body>
+</html>
