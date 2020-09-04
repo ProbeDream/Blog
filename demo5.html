@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+      }
+      /* 头部栏:两边对齐 */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: grey;
+        padding: 4px 0;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      .logo > img {
+        height: 26px;
+        vertical-align: middle;
+      }
+
+      /* 
+        导航部分
+      */
+      ul {
+        display: flex;
+      }
+      ul > li {
+        padding: 4px;
+      }
+
+      .content {
+        display: flex;
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .content > aside {
+        width: 200px;
+        background-color: #999;
+      }
+      .content > main {
+        height: 400px;
+        flex-grow: 1;
+        background-color: #ccc;
+      }
+      .content > .ad {
+        width: 100px;
+        background-color: #000;
+      }
+
+      .imageList {
+        width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+      }
+
+      .imageList > div > .image {
+        width: 191px;
+        height: 191px;
+        background-color: #000;
+        margin-bottom: 10px;
+        margin-right: 6px;
+        margin-left: 6px;
+        border: 1px solid red;
+      }
+      /* 
+        被挤出去的div 向左边靠近12px
+      */
+      .imageList > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -6px;
+        margin-left: -6px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img
+          src="https://static.xiedaimala.com/xdml/cdn/assets/white-logo-1a762b425df663fbccee710fe08d66951cea2fbc0a0350f03446ab30462e739f.png"
+          alt=""
+        />
+      </div>
+      <ul>
+        <li>首页</li>
+        <li>课程</li>
+        <li>优惠</li>
+        <li>关于</li>
+      </ul>
+    </header>
+
+    <!-- 
+        中间的内容部分:
+        1. 侧边栏
+        2. 主要内容区
+        3. 广告区域
+     -->
+    <div class="content">
+      <aside>一行只有六个字</aside>
+      <main></main>
+      <div class="ad"></div>
+    </div>
+
+    <div class="imageList">
+      <div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+        <div class="image"></div>
+      </div>
+    </div>
+  </body>
+</html>
