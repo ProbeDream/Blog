@@ -11,3 +11,5 @@
   *  [Web性能优化](https://probedream.github.io/Blog/Blog-Folder/Web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%B8%B8%E7%94%A8%E6%89%8B%E6%AE%B5.html)
   * [JavaScript中的继承](https://probedream.github.io/Blog/Blog-Folder/JS%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF.html)
   * [如何更好地记笔记](https://probedream.github.io/Blog/Blog-Folder/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E8%AE%B0%E7%AC%94%E8%AE%B0.html)
+  * [脱节](https://probedream.github.io/Blog/%E9%94%B5%E9%94%B5%E4%B8%89%E5%88%86%E9%92%9F%E4%B9%A6%E7%B1%8D/%E8%84%B1%E8%8A%82%E5%B8%A6%E4%B9%A6%E7%AD%BE.html)
+  * [紫丸](https://probedream.github.io/Blog/%E9%94%B5%E9%94%B5%E4%B8%89%E5%88%86%E9%92%9F%E4%B9%A6%E7%B1%8D/%E7%B4%AB%E4%B8%B8%E5%B8%A6%E4%B9%A6%E7%AD%BE.html)
